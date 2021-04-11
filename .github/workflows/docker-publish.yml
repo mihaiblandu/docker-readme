@@ -80,7 +80,7 @@ jobs:
         uses: peter-evans/dockerhub-description@v2.1.0
         env:
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+          DOCKERHUB_USERNAME: mihaiblandu
+          DOCKERHUB_PASSWORD: ${{ secrets.GITHUB_PASSWORD }}
           DOCKERHUB_REPOSITORY: mihaiblandu/kubi
 
