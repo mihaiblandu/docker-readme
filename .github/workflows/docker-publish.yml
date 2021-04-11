@@ -54,12 +54,15 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
       - name: Sync
-        uses: ms-jpq/sync-dockerhub-readme@v1
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push Docker image
         with:
-          username:  mihaiblandu
-          password:  "${{ secrets.GITHUB_PASSWORD }}"
-          repository: mihaiblandu/kubi
-          readme: "./README.md"
+          image: mihaiblandu/kube
+          tags: latest
+          registry: docker.com
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push image
         run: |
           IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
