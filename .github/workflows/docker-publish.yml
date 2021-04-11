@@ -54,7 +54,7 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
       - name: push README to Dockerhub
-        uses: mihaiblandu/docker-readme@v1.0.0
+        uses: mihaiblandu/docker-readme
         with:
             pass: ${{ secrets.DOCKER_PASS }}
             description: true
