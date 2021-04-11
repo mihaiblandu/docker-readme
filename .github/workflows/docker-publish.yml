@@ -56,7 +56,7 @@ jobs:
       - name: Sync
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: mihaiblandu/kube
+          image: mihaiblandu/kubi
           tags: latest
           registry: docker.com
           dockerfile: Dockerfile
