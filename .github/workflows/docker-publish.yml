@@ -73,9 +73,10 @@ jobs:
 
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
-      - name: Docker Hub Description
+      - name: Docker Tocken
         run: |
           echo ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Publish readme
         uses: peter-evans/dockerhub-description@v2.1.0
         env:
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
