@@ -53,6 +53,15 @@ jobs:
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
+      - name: push README to Dockerhub
+        env:
+          DOCKER_USER: mihaiblandu
+          DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+        with:
+          destination_container_repo: mihaiblandu/kubi
+          provider: dockerhub
+          short_description: 'my short description 😊'
+          readme_file: 'README.md'
       - name: Push image
         run: |
           IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
