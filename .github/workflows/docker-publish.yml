@@ -76,7 +76,6 @@ jobs:
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v2.1.0
         env:
-          DOCKERHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ secrets.GITHUB_PASSWORD }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}}
           DOCKERHUB_REPOSITORY: mihaiblandu/kubi
 
