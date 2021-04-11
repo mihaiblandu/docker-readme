@@ -58,7 +58,7 @@ jobs:
         with:
           image: mihaiblandu/kube
           tags: latest
-          registry: docker.io
+          registry: docker.com
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
