@@ -1,0 +1,9 @@
+orbs:
+  docker: circleci/docker@1.5.0
+version: 2.1
+workflows:
+  build-docker-image-only:
+    jobs:
+      - docker/publish:
+          image: mihaiblandu/kubi
+          update-description: true
