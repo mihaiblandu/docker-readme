@@ -55,7 +55,7 @@ jobs:
 
       - uses: meeDamian/sync-readme@v1.0.6
         with:
-          pass: ${{ secrets.DOCKER_PASS }}
+          password: ${{ secrets.DOCKER_PASS }}
           description: true
       - name: Push image
         run: |
