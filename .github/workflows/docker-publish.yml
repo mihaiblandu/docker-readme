@@ -59,7 +59,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: mihaiblandu/kubi
-          readme: "README.MD"
+          readme: "./Readme.md"
 
       - name: Push image
         run: |
