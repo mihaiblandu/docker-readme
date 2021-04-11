@@ -56,8 +56,8 @@ jobs:
       - name: Sync
         uses: ms-jpq/sync-dockerhub-readme@v1
         with:
-          username:  "${{ secrets.DOCKERHUB_USERNAME }}"
-          password:  "${{ secrets.DOCKERHUB_PASSWORD }}"
+          username:  mihaiblandu
+          password:  "${{ secrets.GITHUB_PASSWORD }}"
           repository: mihaiblandu/kubi
           readme: "./README.md"
       - name: Push image
